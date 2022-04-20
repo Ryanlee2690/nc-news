@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import { Link } from 'react-router-dom'
 import { getArticles } from "../utils/api";
 
 
@@ -28,7 +28,7 @@ const Articles = () => {
                         <p>Created By: {article.author}</p>
                         <p>Comments: {article.comment_count}</p>
                         <p>Votes: {article.votes}</p>
-                        <button>View this article</button>
+                       <button> <Link to={`/articles/${article.article_id}`}>Read Article</Link></button>
                         </div>
 
                         

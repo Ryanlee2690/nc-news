@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 import { getCodingArticles } from "../../utils/api";
 
 const Coding = () => {
@@ -26,7 +26,8 @@ const Coding = () => {
                         <p>Created By: {article.author}</p>
                         <p>Comments: {article.comment_count}</p>
                         <p>Votes: {article.votes}</p>
-                        <button>View this article</button>
+                        <button> <Link to={`/articles/${article.article_id}`}>Read Article</Link></button>
+
                         </div>
 
                         

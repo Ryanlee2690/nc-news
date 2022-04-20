@@ -8,6 +8,7 @@ import Topics from './components/Topics'
 import Cooking from './components/Topics/Cooking'
 import Coding from './components/Topics/Coding'
 import Football from './components/Topics/Football'
+import Single_Article from './components/Single_Article';
 
 
 
@@ -23,6 +24,7 @@ function App() {
         <Route path='/articles/cooking' element={<Cooking />}></Route>
         <Route path='/articles/coding' element={<Coding />}></Route>
         <Route path='/articles/football' element={<Football />}></Route>
+        <Route path='/articles/:article_id' element={<Single_Article />}></Route>
       </Routes>
     </div>
   );

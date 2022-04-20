@@ -32,3 +32,12 @@ export const getCodingArticles = () => {
      return data.articles
     })
 }
+
+export const getSingleArticle = (article_id) => {
+
+    let path = `/articles/${article_id}`
+
+  return newsApi.get(path).then(({ data }) => {
+      return data.article
+  })
+}
