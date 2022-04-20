@@ -1,17 +1,22 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { getCookingArticles } from "../../utils/api";
+import { getTopicArticles } from "../utils/api";
+import { useParams } from "react-router-dom"
 
-const Cooking = () => {
+
+const Coding = () => {
     const [articles, setArticles] = useState([]);
-
-
+    const { topic } = useParams()
+    
+    
     useEffect(() => {
-        getCookingArticles().then((articlesFromApis) => {
-            setArticles(articlesFromApis)
+        getTopicArticles(topic)
+        .then((topicFromApi) => {
+            console.log(topicFromApi,'<=== Topicfromapi')
 
-        });
-    }, [])
+            setArticles(topicFromApi)
+        })
+    }, [topic])
 
     return(
         <main className='Articles'>
@@ -25,8 +30,9 @@ const Cooking = () => {
                         <p>{article.topic}</p>
                         <p>Created By: {article.author}</p>
                         <p>Comments: {article.comment_count}</p>
-                        <p>Votes: {article.votes}</p>
+
                         <button> <Link to={`/articles/${article.article_id}`}>Read Article</Link></button>
+
                         </div>
 
                         
@@ -36,6 +42,6 @@ const Cooking = () => {
             })}
         </main>
     )
-    }
-    
-    export default Cooking
+}
+
+export default Coding
