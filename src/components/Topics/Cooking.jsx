@@ -1,15 +1,13 @@
 import { useEffect, useState } from "react";
 
-import { getArticles } from "../utils/api";
+import { getCookingArticles } from "../../utils/api";
 
-
-const Articles = () => {
-
+const Cooking = () => {
     const [articles, setArticles] = useState([]);
 
 
     useEffect(() => {
-        getArticles().then((articlesFromApis) => {
+        getCookingArticles().then((articlesFromApis) => {
             setArticles(articlesFromApis)
 
         });
@@ -38,6 +36,6 @@ const Articles = () => {
             })}
         </main>
     )
-}
-
-export default Articles
+    }
+    
+    export default Cooking

@@ -1,15 +1,13 @@
 import { useEffect, useState } from "react";
 
-import { getArticles } from "../utils/api";
+import { getCodingArticles } from "../../utils/api";
 
-
-const Articles = () => {
-
+const Coding = () => {
     const [articles, setArticles] = useState([]);
-
-
+    
+    
     useEffect(() => {
-        getArticles().then((articlesFromApis) => {
+        getCodingArticles().then((articlesFromApis) => {
             setArticles(articlesFromApis)
 
         });
@@ -40,4 +38,4 @@ const Articles = () => {
     )
 }
 
-export default Articles
+export default Coding

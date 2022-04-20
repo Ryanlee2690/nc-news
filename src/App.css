@@ -3,6 +3,9 @@
   List-style-type: none
 }
 
+.Topics {
+  padding: 50px;
+}
 .Articles_list {
   padding: 15px 16px;
   background-color: aliceblue;
@@ -13,7 +16,22 @@
 }
 
 .card {
- display: inline-grid;
-  align-items: center;
-  justify-content: center;
+ display: inline-block;
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px
+}
+
+.Topic_images {
+  max-width: 200px;
+}
+
+.Topic_card{ 
+  max-width: 500px;
+  /* border: solid black; */
+  padding: 40px;
+  background-color: aliceblue;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  margin: 10px;
+  
 }

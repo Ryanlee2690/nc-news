@@ -5,8 +5,30 @@ const newsApi = axios.create({
 });
 
 export const getArticles = () => {
-    return newsApi.get('/articles').then(({ data }) => {
-        console.log(data.articles)
-        return data.articles
+
+    let path = '/articles'
+    return newsApi.get(path).then(({ data }) => {
+     return data.articles
+    })
+}
+export const getCookingArticles = () => {
+
+    let path = '/articles?topic=cooking'
+    return newsApi.get(path).then(({ data }) => {
+     return data.articles
+    })
+}
+export const getFootballArticles = () => {
+
+    let path = '/articles?topic=football'
+    return newsApi.get(path).then(({ data }) => {
+     return data.articles
+    })
+}
+export const getCodingArticles = () => {
+
+    let path = '/articles?topic=coding'
+    return newsApi.get(path).then(({ data }) => {
+     return data.articles
     })
 }
