@@ -10,7 +10,7 @@ const AddComment = (article_id) => {
     
 
     const [newComment, setNewComment] = useState("");
-    const [newUsername, setNewUsername] = useState("");
+
     
     
     
@@ -21,7 +21,7 @@ const AddComment = (article_id) => {
         e.preventDefault();
 
 
-        setOptimisticUsername((currentUsername) => currentUsername = newUsername);
+        setOptimisticUsername((currentUsername) => currentUsername = 'tickle122');
         setOptimisticComments((currentComment) => currentComment = newComment);
         setOptimisticVotes((currentVotes) => currentVotes = 'Likes : 0')
         
@@ -29,7 +29,7 @@ const AddComment = (article_id) => {
             method: "POST",
             body: JSON.stringify({
                 body: newComment,
-                username: newUsername
+                username: 'tickle122'
             }),
             headers: {
                 'Content-Type': 'application/json'
@@ -47,18 +47,12 @@ const AddComment = (article_id) => {
           <form onSubmit={(e) => handleSubmit(e)}>
             <input
               type="text"
-              value={newUsername}
-              placeholder="Username"
-              onChange={(e) => setNewUsername(e.target.value)}
-            />
-            <input
-              type="text"
               value={newComment}
               placeholder="Comment"
               onChange={(e) => setNewComment(e.target.value)}
             />
     
-            <button type="submit" disabled={optimisticComments !== undefined} >Create</button>
+            <button type="submit" disabled={optimisticComments !== undefined || newComment.length === 0} >Create</button>
 
 
             <li className='card'>
