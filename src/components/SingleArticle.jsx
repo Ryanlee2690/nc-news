@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import { getSingleArticle } from "../utils/api"
 import Votes from './Votes'
 import Comments from './Comments'
+import AddComment from "./AddComment"
 
 const Single_Article = () => {
 
@@ -31,6 +32,7 @@ let formattedDate = date
         <p>Date Created: {formattedDate}</p>
 
         <Votes votes={article.votes} article={article.article_id} />
+        <AddComment article_id={article.article_id} />
         <Comments article={article.article_id} />
         </article>
     )
