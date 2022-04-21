@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { getSingleArticle } from "../utils/api"
 import Votes from './Votes'
+import Comments from './Comments'
 
 const Single_Article = () => {
 
@@ -15,6 +16,7 @@ const Single_Article = () => {
             setArticle(articleFromApi)
         })
     }, [article_id])
+    
 let date = article.created_at
 
 let formattedDate = date
@@ -29,7 +31,7 @@ let formattedDate = date
         <p>Date Created: {formattedDate}</p>
 
         <Votes votes={article.votes} article={article.article_id} />
-        <footer>comments go here</footer>
+        <Comments article={article.article_id} />
         </article>
     )
 }

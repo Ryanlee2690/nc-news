@@ -27,3 +27,5 @@ export const getSingleArticle = (article_id) => {
       return data.article
   })
 }
+
+

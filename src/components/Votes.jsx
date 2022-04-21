@@ -1,8 +1,8 @@
 import { useState } from "react";
 const Votes = ({votes, article}) => {
 
-    console.log(article)
-    console.log(votes)
+
+
     const [optimisticVotes, setOptimisticVotes] = useState(0)
 
     const increaseVotes = () => {
